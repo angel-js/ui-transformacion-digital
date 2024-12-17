@@ -1,68 +1,169 @@
+/* Estilos globales y para la raíz */
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
+  display: flex;
+  justify-content: center; /* Centrado horizontal */
+  align-items: center; /* Centrado vertical */
+  height: 100vh; /* Ocupa toda la altura de la ventana */
+  width: 100vw; /* Ocupa todo el ancho de la ventana */
+  margin: 0;
+  padding: 0;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-}
-
+/* Estilos generales de la página */
 body {
   margin: 0;
   display: flex;
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
+  background-color: #ffffff; /* Fondo blanco */
 }
 
+/* Enlaces */
+a {
+  font-weight: 500;
+  color: #0056b3; /* Azul oscuro para enlaces */
+  text-decoration: none;
+}
+
+a:hover {
+  color: #003d80; /* Azul más oscuro al pasar el mouse */
+}
+
+/* Títulos */
 h1 {
   font-size: 3.2em;
   line-height: 1.1;
+  color: #222222; /* Texto principal más oscuro */
 }
 
+/* Estilos de botones */
 button {
   border-radius: 8px;
-  border: 1px solid transparent;
+  border: 1px solid #dddddd; /* Borde gris claro */
   padding: 0.6em 1.2em;
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
-  background-color: #1a1a1a;
+  background-color: #007bff; /* Botón azul */
+  color: #ffffff; /* Texto blanco */
   cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+  transition: all 0.25s;
 }
 
-@media (prefers-color-scheme: light) {
+button:hover {
+  background-color: #0056b3; /* Botón más oscuro al pasar el mouse */
+  border-color: #004085;
+}
+
+button:focus,
+button:focus-visible {
+  outline: 4px auto #80bdff; /* Resaltado accesible */
+}
+
+/* Estilos para el calendario */
+.calendar-container {
+  width: 100vw; /* Ocupa todo el ancho de la pantalla */
+  height: 100vh; /* Ocupa toda la altura de la pantalla */
+  background-color: #ffffff; /* Fondo blanco */
+  border-radius: 0; /* Sin bordes redondeados */
+  box-shadow: none; /* Sin sombra */
+  overflow: hidden; /* Evitar desbordes */
+}
+
+/* Ajuste del calendario */
+.fc {
+  width: 100%; /* Ajuste al 100% del ancho */
+  height: 100%; /* Ajuste al 100% de la altura */
+  background-color: #ffffff; /* Fondo blanco */
+  border-radius: 8px; /* Bordes redondeados */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+}
+
+/* Estilo de la barra de herramientas del calendario */
+.fc-toolbar {
+  background-color: #007bff; /* Azul para la barra de herramientas */
+  color: #ffffff; /* Texto blanco */
+  border-radius: 8px 8px 0 0;
+  padding: 10px;
+}
+
+.fc-toolbar-title {
+  font-size: 1.5em;
+  color: #ffffff; /* Título blanco */
+}
+
+/* Estilo de los botones del calendario */
+.fc-button {
+  background-color: #ffffff; /* Botones blancos */
+  color: #007bff; /* Texto azul */
+  border: 1px solid #007bff;
+}
+
+.fc-button:hover {
+  background-color: #007bff; /* Fondo azul al pasar el mouse */
+  color: #ffffff; /* Texto blanco */
+}
+
+/* Estilo de los eventos */
+.fc-event {
+  background-color: #007bff !important; /* Fondo de evento azul */
+  color: #ffffff !important; /* Texto blanco */
+  border: none; /* Sin borde */
+  border-radius: 4px; /* Bordes redondeados */
+  font-size: 0.9em;
+  padding: 2px 4px;
+}
+
+.fc-daygrid-day-number {
+  color: #333333; /* Números del calendario oscuros */
+}
+
+.fc-day-today {
+  background-color: #f0f8ff !important; /* Fondo celeste para el día actual */
+}
+
+/* Mejorar legibilidad en modo oscuro */
+@media (prefers-color-scheme: dark) {
   :root {
-    color: #213547;
-    background-color: #ffffff;
+    color: #e0e0e0; /* Texto gris claro */
+    background-color: #121212; /* Fondo oscuro */
   }
+
+  a {
+    color: #90caf9; /* Azul claro */
+  }
+
   a:hover {
-    color: #747bff;
+    color: #64b5f6; /* Azul más intenso */
   }
+
   button {
-    background-color: #f9f9f9;
+    background-color: #2196f3; /* Botón azul brillante */
+    color: #ffffff; /* Texto blanco */
+    border: 1px solid #64b5f6;
+  }
+
+  button:hover {
+    background-color: #1976d2; /* Azul más oscuro */
+  }
+
+  .fc {
+    background-color: #1e1e1e; /* Fondo oscuro para el calendario */
+    color: #f5f5f5; /* Texto claro */
+  }
+
+  .fc-event {
+    background-color: #90caf9 !important; /* Fondo de evento azul claro */
+    color: #000000 !important; /* Texto oscuro */
+  }
+
+  .fc-toolbar {
+    background-color: #333333;
+    color: #ffffff;
   }
 }

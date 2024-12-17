@@ -1,0 +1,100 @@
+/* Contenedor del calendario centrado */
+.calendar-container {
+    display: flex; /* Utiliza flexbox para centrar */
+    justify-content: center; /* Centrado horizontal */
+    align-items: center; /* Centrado vertical */
+    width: 100vw; /* Ancho completo de la pantalla */
+    height: 100vh; /* Alto completo de la pantalla */
+    background-color: #ffffff; /* Fondo blanco */
+    border-radius: 0; /* Sin bordes redondeados */
+    box-shadow: none; /* Sin sombra */
+    overflow: hidden; /* Evitar desbordes */
+  }
+
+  /* Números del calendario en blanco */
+.fc-daygrid-day-number {
+    color: #ffffff !important; /* Color blanco para los números */
+  } 
+  /* Día actual con fondo diferente y texto visible */
+.fc-day-today {
+    background-color: #007bff !important; /* Fondo azul para el día actual */
+    color: #ea5252 !important; /* Texto blanco para el día actual */
+    border-radius: 100%; /* Bordes redondeados para el día actual */
+    font-weight: bold; /* Texto en negrita para el día actual */
+  }
+  
+  /* Ajuste del calendario */
+  .fc {
+    width: 90%; /* Ajustar al 90% del ancho de la pantalla */
+    height: 90%; /* Ajustar al 90% de la altura */
+    /*background-color: #ffffff; /* Fondo blanco */
+    border-radius: 8px; /* Bordes redondeados */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+  }
+  
+  /* Estilo general del calendario */
+  .fc { 
+    background-color: #ffffff; /* Fondo blanco sólido */
+    border-radius: 8px; /* Bordes redondeados */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+    color: #333333; /* Color de texto oscuro */
+  }
+  
+  /* Encabezados y botones */
+  .fc-toolbar {
+    background-color: #007bff; /* Azul para la barra de herramientas */
+    color: #ffffff; /* Texto blanco */
+    border-radius: 8px 8px 0 0;
+    padding: 10px;
+  }
+  
+  .fc-toolbar-title {
+    font-size: 1.5em;
+    color: #ffffff; /* Título blanco */
+  }
+  
+  .fc-button {
+    background-color: #ffffff; /* Botones blancos */
+    color: #007bff; /* Texto azul */
+    border: 1px solid #007bff;
+  }
+  
+  .fc-button:hover {
+    background-color: #007bff; /* Fondo azul al pasar el mouse */
+    color: #ffffff; /* Texto blanco */
+  }
+  
+  /* Eventos */
+  .fc-event {
+    background-color: #007bff !important; /* Fondo de evento azul */
+    color: #ffffff !important; /* Texto blanco */
+    border: none; /* Sin borde */
+    border-radius: 4px; /* Bordes redondeados */
+    font-size: 0.9em;
+    padding: 2px 4px;
+  }
+  
+  .fc-daygrid-day-number {
+    color: #333333; /* Números del calendario oscuros */
+  }
+  
+  .fc-day-today {
+    background-color: #f0f8ff !important; /* Fondo celeste para el día actual */
+  }
+  
+  /* Mejorar legibilidad en modo oscuro */
+  @media (prefers-color-scheme: dark) {
+    .fc {
+      background-color: #1e1e1e; /* Fondo gris oscuro */
+      color: #f5f5f5; /* Texto claro */
+    }
+    .fc-event {
+      background-color: #90caf9 !important; /* Fondo de evento azul claro */
+      color: #000000 !important; /* Texto oscuro */
+    }
+    .fc-toolbar {
+      background-color: #333333;
+      color: #ffffff;
+    }
+  }
+  
