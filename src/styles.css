@@ -1,3 +1,39 @@
+/* Navbar contenedor */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #2e93ffcb; /* Color de fondo del Navbar */
+  color: white;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+/* Título del Navbar */
+.navbar-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin: 0;
+}
+
+/* Botones del Navbar */
+.navbar-buttons button {
+  margin-left: 10px;
+  padding: 5px 10px;
+  background-color: #ea5252;
+  border: none;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.navbar-buttons button:hover {
+  background-color: #c44141; /* Color al pasar el mouse */
+}
+
 /* Contenedor del calendario centrado */
 .calendar-container {
     display: flex; /* Utiliza flexbox para centrar */
@@ -11,18 +47,22 @@
     overflow: hidden; /* Evitar desbordes */
   }
 
+  .fc-day-today {
+    background-color: transparent;
+  }
+
   /* Números del calendario en blanco */
 .fc-daygrid-day-number {
     color: #ffffff !important; /* Color blanco para los números */
   } 
   /* Día actual con fondo diferente y texto visible */
-.fc-day-today {
-    background-color: #007bff !important; /* Fondo azul para el día actual */
-    color: #ea5252 !important; /* Texto blanco para el día actual */
-    border-radius: 100%; /* Bordes redondeados para el día actual */
-    font-weight: bold; /* Texto en negrita para el día actual */
+  /* Aumenta la especificidad para sobrescribir los estilos de FullCalendar */
+  .fc-day-today.fc-daygrid-day {
+    background-color: #db5050 !important; /* Fondo azul para el día actual */
+    color: #ea5252 !important; /* Texto rojo para el día actual */
+    border-radius: 10%; /* Bordes redondeados */
+    font-weight: bold; /* Texto en negrita */
   }
-  
   /* Ajuste del calendario */
   .fc {
     width: 90%; /* Ajustar al 90% del ancho de la pantalla */
@@ -97,4 +137,107 @@
       color: #ffffff;
     }
   }
-  
+
+  /* Etiquetas (label) en negro */
+.modal .form-group label {
+  color: black; /* Asegura que el texto sea negro */
+  font-weight: bold; /* Hace que el texto sea más claro */
+}
+
+/* Inputs del formulario */
+.modal .form-group input {
+  color: black; /* Texto en negro dentro del input */
+  background-color: white; /* Fondo blanco para los inputs */
+  border: 1px solid #ccc; /* Borde gris claro */
+  padding: 8px;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+/* Placeholder de los inputs */
+.modal .form-group input::placeholder {
+  color: #666; /* Placeholder en gris oscuro */
+  opacity: 1;
+}
+
+/* General: texto dentro del modal */
+.modal {
+  color: black; /* Texto general en negro */
+}
+  /* Fondo transparente del modal */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5); /* Fondo semitransparente */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+/* Contenedor del modal */
+.modal {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  max-width: 400px;
+  width: 100%;
+  position: relative;
+  z-index: 1001;
+}
+
+/* Botones dentro del modal */
+.modal-buttons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.modal-buttons button {
+  padding: 5px 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.modal-buttons button[type="submit"] {
+  background-color: #007bff;
+  color: white;
+}
+
+.modal-buttons button[type="submit"]:hover {
+  background-color: #0056b3;
+}
+
+.modal-buttons button[type="button"] {
+  background-color: #ea5252;
+  color: white;
+}
+
+.modal-buttons button[type="button"]:hover {
+  background-color: #c44141;
+}
+
+/* Formulario */
+.form-group {
+  margin-bottom: 10px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
